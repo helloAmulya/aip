@@ -84,7 +84,9 @@ for quizNum in range(35):
         del wrongAns[wrongAns.index(correctAns)]
         wrongAns = random.sample(wrongAns, 3)
         ansOptions = wrongAns + [correctAns]
-        random.shuffle(ansOptions)
+        random.shuffle(
+            ansOptions
+        )  # if we don't do this, the correct ans always be at the last option i.e. at D, in ABCD
 
         quizfile.write(
             "%s. What is the capital of %s?\n" % (questionNum + 1, states[questionNum])
