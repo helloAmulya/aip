@@ -4,7 +4,7 @@ text = "The ADJECTIVE panda walked to the NOUN and then VERB. A nearby NOUN was 
 
 os.makedirs("libsMad", exist_ok=True)
 
-toDisplay = open("libsMad/org_statement.txt", "w+")
+toDisplay = open("libsMad/org_statement.txt", "w+")  # w+ or read + write
 
 toReplace = open("libsMad/rep_statement.txt", "w+")
 
@@ -13,7 +13,19 @@ toDisplay.seek(0)
 
 print(toDisplay.read())
 
-tags = ["ADJECTIVE", "NOUN", "VERB"]
+
+# get the tags separated from the main text
+
+words = text.split()
+tags = []
+
+for word in words:
+    word = word.strip(".,!?;:")  # remove unwanted symbol in tags
+    if word.isupper() and len(word) > 2 and word not in tags:
+        tags.append(word)
+print(tags)
+
+# tags = ["ADJECTIVE", "NOUN", "VERB"]
 
 for tag in tags:
 
