@@ -20,6 +20,8 @@ for tag in tags:
     if tag in text:
         usr_input = input(f"Enter an {tag}: ")
         text = text.replace(tag, usr_input)
+        # for now use simple logic to replace all occurrences
+        # later, logic for different inputs for repeated placeholders will be added
 
 toReplace.write(text)
 toReplace.seek(0)
