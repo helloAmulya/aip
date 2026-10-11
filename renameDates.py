@@ -38,7 +38,7 @@ for amerFilename in os.listdir(folderName):
 
     euroFilename = beforePart + dayPart + "-" + monthPart + "-" + yearPart + afterPart
 
-    # absWorkingDir = os.path.abspath(".") # change this to give manual pathname
+    # absWorkingDir = os.path.abspath(".") # changed this to give manual pathname
 
     absWorkingDir = os.path.abspath(folderName)
 
