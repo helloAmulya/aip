@@ -1,10 +1,6 @@
 # ATBS Chapters 1–9 — Reference Sheet
 
 Built from _Automate the Boring Stuff with Python_ (1st-edition numbering: Ch 7 Regex, Ch 8 Reading/Writing Files, Ch 9 Organizing Files) and from the scripts in your `aip` repo.
-Every code block is self-contained, so you can paste it into a fresh file and run it.
-Things marked **(bonus)** are not in the book's chapters yet but show up constantly in real code, and some already appear in your own scripts.
-
-**How to use it:** before you look a method up, say out loud what it should return. Then check. That habit sticks better than re-reading.
 
 ---
 
@@ -242,18 +238,18 @@ m = re.search(r"(\d+)-(\d+)-(\d{4})", "due 7-4-2026")
 print(m.group(1), m.group(2), m.group(3), m.groups())   # 7 4 2026 ('7', '4', '2026')
 ```
 
-| Syntax                            | Meaning                                                                        |
-| --------------------------------- | ------------------------------------------------------------------------------ | ------ |
-| `\d  \w  \s`                      | digit / word char / whitespace (capitals `\D \W \S` mean the opposite)         |
-| `.`                               | any character except newline                                                   |
-| `*  +  ?`                         | 0 or more / 1 or more / 0 or 1                                                 |
-| `{3}  {2,4}`                      | exactly 3 / between 2 and 4                                                    |
-| `[abc]  [^abc]  [a-z]`            | any of / none of / range                                                       |
-| `^  $`                            | start / end of string                                                          |
-| `( )`                             | capture group (numbered from 1, `group(0)` is the whole match)                 |
-| `a                                | b`                                                                             | a or b |
-| `*?  +?`                          | non-greedy (shortest match)                                                    |
-| `re.I`, `re.DOTALL`, `re.VERBOSE` | ignore case / let `.` match newline / allow comments and spaces in the pattern |
+| Syntax                            | Meaning                                                                             |
+| --------------------------------- | ----------------------------------------------------------------------------------- |
+| `\d`, `\w`, `\s`                  | Digit / word character / whitespace (`\D`, `\W`, `\S` mean the opposite)            |
+| `.`                               | Any character except newline                                                        |
+| `*`, `+`, `?`                     | Zero or more / one or more / zero or one                                            |
+| `{3}`, `{2,4}`                    | Exactly 3 / between 2 and 4                                                         |
+| `[abc]`, `[^abc]`, `[a-z]`        | Any of / none of / character range                                                  |
+| `^`, `$`                          | Start / end of string                                                               |
+| `( )`                             | Capture group (numbered from 1; `group(0)` is the whole match)                      |
+| `a\|b`                            | `a` or `b`                                                                          |
+| `*?`, `+?`                        | Non-greedy matching (shortest match)                                                |
+| `re.I`, `re.DOTALL`, `re.VERBOSE` | Ignore case / let `.` match newlines / allow comments and whitespace in the pattern |
 
 Always write patterns as raw strings: `r"..."`. Your `renameDates.py` is a good real example: group 1 is the text before the date, groups 2/4/6 are month/day/year, group 8 is the text after.
 
@@ -456,4 +452,3 @@ for pdf in Path(".").rglob("*.pdf"):                  # recursive search, replac
 13. Relative paths depend on the folder you run from. Print `os.getcwd()` when a file "isn't found".
 14. Compare to `None` with `is None`, not `== None`.
 15. Use `with open(...)` so files always close.
-16. Don't commit real passwords or API keys to a public repo. The sample passwords in `pw.py` come from the book, which is fine, but a real one is not.
