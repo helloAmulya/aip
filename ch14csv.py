@@ -13,6 +13,7 @@ exampleReader = csv.reader(exampleFile)
 for row in exampleReader:
     print("Row #" + str(exampleReader.line_num) + " " + str(row)) 
 """
+exampleFile.close()
 
 
 # writing a csv
@@ -29,3 +30,20 @@ nout = open("new_output.csv")
 outReader = csv.reader(nout)
 outData = list(outReader)
 print(outData)
+
+
+# working with tsv files
+
+csvFile = open("example2.tsv", "w", newline="")
+csvWriter = csv.writer(csvFile, delimiter="\t", lineterminator="\n")
+csvWriter.writerow(["apples", "oranges", "grapes"])
+csvWriter.writerow(["spam", "spam", "spam", "spam"])
+csvWriter.writerow(["ojophc", "cn41", "r23cac", "afads"])
+csvFile.close()
+
+
+tsout = open("example2.tsv")
+# tsReader = csv.reader(tsout) # without delimiter the output will be not as accepted
+tsReader = csv.reader(tsout, delimiter="\t")
+tsData = list(tsReader)
+print(tsData)
