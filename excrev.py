@@ -19,7 +19,8 @@ ws3 = school_wb.create_sheet("Subjects")
 # add data to each sheet
 
 ws1.append(["Name", "Age"])  # default header row
-ws1.append(["alice", "14"])  # data gets added after this
+ws1.append(["alice", 14])  # data gets added after this
+# store 14 (age) as number
 
 ws2.append(["Name", "Department"])
 ws2.append(["mathew", "science"])
@@ -31,4 +32,4 @@ ws3.append(["python", "404"])
 # save the workbok
 school_wb.save("School.xlsx")
 
-# imp -> using 'school_wb = Workbook()' instead of openpyxl.load_workbook(), and saving it will rewrite the exisiting file, for adding new data use load_workbook()
+# imp -> using 'school_wb = Workbook()' instead of openpyxl.load_workbook(), and saving it will rewrite the exisiting file, for adding new data use load_workbook
