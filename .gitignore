@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+
+*.e
+
 # Distribution / packaging
 .Python
 build/
@@ -157,6 +160,17 @@ ENV/
 env.bak/
 venv.bak/
 
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -216,3 +230,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Sandbox
+sandbox/
+
+capstone/
+sandbox/pandas-kaggle/**/*.csv
